@@ -163,6 +163,8 @@ header {
 
             a {
                 transition: all 0.3s ease 0s;
+                color: #fff;
+                text-decoration: none;
             }
         }
     }
@@ -223,6 +225,8 @@ section {
             background-color: #FF4D89;
             font-size: 1.25rem;
             font-weight: 400;
+            text-decoration: none;
+            color: #fff;
         }
 
         .section-home_buttons a:hover {

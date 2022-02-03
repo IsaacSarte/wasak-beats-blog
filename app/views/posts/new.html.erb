@@ -38,7 +38,17 @@
                     </div>
                 </div>
 
-                <br/>
+                <% if @post.errors.any? %>
+                    <div class="error-new-public">
+
+                        <ul>
+                        <% @post.errors.each do |error| %>
+                            <li><%= error.full_message %></li>
+                        <% end %>
+                        </ul>
+                        
+                    </div>
+                <% end %>
 
                 <div class="actions act-form">
                     <%= form.submit "Save Song" %>

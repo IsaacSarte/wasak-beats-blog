@@ -1,0 +1,33 @@
+// Place all the styles related to the Home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+.error-new-private {
+
+    margin-top: -1rem;
+    margin-bottom: 1rem;
+
+    ul {
+        list-style: none;
+
+        li {
+            color: red;
+            font-weight: 550;
+        }
+    }
+}
+
+.error-new-public {
+    margin-top: 3rem;
+    margin-bottom: -3rem;
+    z-index: 1;
+
+    ul {
+        list-style: none;
+
+        li {
+            color: red;
+            font-weight: 550;
+        }
+    }
+}

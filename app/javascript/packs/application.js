@@ -27,22 +27,24 @@ reloadPage.onclick = () => {
 };
 
 document.addEventListener('turbolinks:load', () => {
+    let hideEditorBtn = document.querySelector('.hide-editor')
+    let addLyricsBtn = document.querySelector('.add-lyrics-btn')
+    let richTextArea = document.querySelector('.rich-form')
 
-    document.addEventListener('click', () => {
-        let element = event.target.closest('paragraph-content')
-        if (!element) return;
+    let openEditorBtn = document.querySelector('.open-editor')
+    openEditorBtn.style.display = 'none'
 
-        element.classList.add('d-none')
-        element.nextElementSibling.classList.remove('d-none')
+    hideEditorBtn.addEventListener('click', () => {
+        console.log('Hide Editor Button Clicked')
+        addLyricsBtn.style.display = 'none'
+        richTextArea.style.display = 'none'
+        openEditorBtn.style.display = 'initial'
     })
 
-
-    document.addEventListener('click', () => {
-        if (!event.target.matches('.cancel')) return;
-
-        let element = event.target.closest('.paragraph-form')
-
-        element.classList.add('d-none')
-        element.previousElementSibling.classList.remove('d-none')
-    }) 
+    openEditorBtn.addEventListener('click', () => {
+        console.log('Open Editor Button Clicked')
+        openEditorBtn.style.display = 'none'
+        addLyricsBtn.style.display = 'initial'
+        richTextArea.style.display = 'block'
+    })
 })

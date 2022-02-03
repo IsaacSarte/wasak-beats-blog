@@ -20,13 +20,24 @@
             <%= render 'form', song: @song %>
         </div>
 
-        <div class="private-posts-lyrics">
+        <%= form_with(model: [@song, @paragraph], class: 'hidden-form') do |form| %>
+          <%= form.hidden_field :element_type, value: 'paragraph' %>
+          <%= form.submit "➕ Add Lyrics", class: 'add-lyrics-btn' %>
+        <% end %>
 
-            
-            
-            
-
-        </div>
+         <% @song.elements.each do |element| %>
+          <% if element.persisted? %>
+            <%= element.content %>
+            <%= form_with(model: [@song, element], class: 'rich-form') do |form| %>
+              <%= form.rich_text_area :content %>
+              <div class="rich-form-btns">
+                <%= form.submit "🎙️ Save" %>
+                <p class="hide-editor">➖ Hide Editor</p>
+              </div>
+            <% end %>
+            <p class="open-editor">➕ Show Editor</p>
+          <% end %>
+        <% end %>
 
     </div>
 
