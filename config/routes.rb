@@ -12,4 +12,13 @@ Rails.application.routes.draw do
     end
   end
 
+  # public posts routes using model
+  get '/posts' => 'posts#index'
+  get '/posts/new' => 'posts#new'
+
+  post '/posts' => 'posts#create', as: 'post_create'
+
+  get '/posts/edit/:id' => 'posts#edit', as: 'post_edit'
+  put '/posts/:id' => 'posts#update', as: 'post_update'
+
 end
