@@ -1,0 +1,93 @@
+// Place all the styles related to the Home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+.custom-shape-divider-top-1643730706 {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+}
+
+.custom-shape-divider-top-1643730706 svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 250px;
+}
+
+.custom-shape-divider-top-1643730706 .shape-fill {
+    fill: #616688;
+}
+
+// edit
+
+.custom-shape-divider-top-1643736305 {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    transform: rotate(180deg);
+}
+
+.custom-shape-divider-top-1643736305 svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 150px;
+}
+
+.custom-shape-divider-top-1643736305 .shape-fill {
+    fill: #616688;
+}
+
+// ======================================================= //
+
+/* Writer's Posts Styling */
+
+.custom-shape-divider-top-1643733422 {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+}
+
+.custom-shape-divider-top-1643733422 svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 150px;
+}
+
+.custom-shape-divider-top-1643733422 .shape-fill {
+    fill: #616688;
+}
+
+// new
+
+.custom-shape-divider-top-1643732729 {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+}
+
+.custom-shape-divider-top-1643732729 svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 150px;
+    transform: rotateY(180deg);
+}
+
+.custom-shape-divider-top-1643732729 .shape-fill {
+    fill: #616688;
+}

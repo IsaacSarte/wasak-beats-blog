@@ -1,0 +1,230 @@
+// Place all the styles related to the Home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+/* index */
+
+.method-btn {
+    position: fixed;
+    margin-top: 5vmin;
+    display: flex;
+    gap: 5rem;
+    margin-left: 25vw;
+    margin-right: auto;
+    z-index: 1;
+
+    .new-private-song-btn,
+    .logout-btn {
+        a {
+            outline: none;
+            border: none;
+            background-color: #e03a72;
+            color: #fff;
+            font-size: 1.15rem;
+            font-weight: 550;
+            padding: 0.75rem 0.75rem;
+            border-radius: 25px;
+        }
+
+        a:hover {
+            background-color: #ff4d88bb;
+        }
+    }
+
+    .logout-btn {
+        a {
+            background-color: #a72121;
+        }
+
+        a:hover {
+            background-color: #a01f1fb4;
+        }
+    }
+}
+
+.index-private {
+    position: relative;
+
+    .index-private-songs {
+
+        .index-main-text {
+            position: absolute;
+            margin-top: -10vmin;
+            right: 0;
+            transform: translateX(-15vmin);
+        }
+
+        .index-private-songs-main {
+            margin-top: 25vh;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(19rem, 1fr));
+            place-content: center;
+            place-items: center;
+
+            .index-private-songs-card {
+                text-align: center;
+
+                .index-title {
+                    padding: 0.75rem 0.75rem;
+                    font-size: 1.35rem;
+                    font-weight: 550;
+
+                    .index-p-title {
+                        border-bottom: 2px solid white;
+                    }
+                }
+
+                .index-p-desc {
+                    font-size: 1.15rem;
+                }
+
+                .index-description {
+                    padding: 0.75rem 0.75rem;
+                    background-color: #fff;
+                    outline: none;
+                    border: none;
+                    border-radius: 5px;
+                    color: #000;
+                    font-size: 1.15rem;
+                }
+            }
+        }
+    }
+}
+
+// ========================================================== //
+
+/* new */
+
+.back-songs-btn {
+    a {
+        outline: none;
+        border: none;
+        background-color: #e03a72;
+        color: #fff;
+        font-size: 1.15rem;
+        font-weight: 550;
+        padding: 0.75rem 0.75rem;
+        border-radius: 25px;
+    }
+
+    a:hover {
+        background-color: #ff4d88bb;
+    }
+}
+
+// ========================================================== //
+
+/* show */
+
+.delete-song-btn {
+
+    a {
+        outline: none;
+        border: none;
+        background-color: #a72121;
+        color: #fff;
+        font-size: 1.15rem;
+        font-weight: 550;
+        padding: 0.75rem 0.75rem;
+        border-radius: 15px;
+    }
+
+    a:hover {
+        background-color: #a01f1fb4;
+    }
+}
+
+.show-new-song {
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 50%);
+}
+
+.song-card {
+    text-align: center;
+
+    .song-title {
+        padding: 0.75rem 0.75rem;
+        font-size: 2rem;
+        font-weight: 550;
+
+        .song-p-title {
+            border-bottom: 2px solid white;
+        }
+    }
+
+    .song-p-desc {
+        font-size: 1.5rem;
+    }
+
+    .song-description {
+        padding: 0.75rem 0.75rem;
+        background-color: #fff;
+        outline: none;
+        border: none;
+        border-radius: 5px;
+        color: #000;
+        font-size: 1.25rem;
+    }
+}
+
+.show-method-btn {
+
+    a {
+        margin: 2rem;
+        font-size: 1.25rem;
+        font-weight: 550;
+    }
+
+    .show-edit-btn {
+        color: rgb(223, 119, 0);
+    }
+
+    .show-back-btn {
+        color: #fff;
+    }
+}
+
+// ========================================================== //
+
+/* edit */
+
+.edit-show-song-btn {
+    a {
+        outline: none;
+        border: none;
+        background-color: rgba(255, 255, 255, 0.918);
+        color: #000;
+        font-size: 1.15rem;
+        font-weight: 550;
+        padding: 0.75rem 0.75rem;
+        border-radius: 15px;
+    }
+
+    a:hover {
+        background-color: rgba(255, 255, 255, 0.788);
+    }
+}
+
+.index-private {
+
+    .edit-private-songs {
+
+        .edit-main-text {
+            position: absolute;
+            margin-top: 5vmin;
+            right: 0;
+            transform: translateX(-15vmin);
+        }
+
+        .edit-song {
+            margin-top: 10vmin;
+        }
+
+    }
+}
+
+/* Media Queries */

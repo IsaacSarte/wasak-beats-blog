@@ -1,0 +1,52 @@
+<div class="login-svg">
+  <%= image_tag 'blob-scene-haikei.svg', alt: 'Login svg' %>
+</div>
+
+<%# Header %>
+
+<header class="header-home login-header">
+  <span class="header-span"><%= link_to 'Wasak Beats Blog', root_path %> </span>
+</header>
+
+<p class="login-alert">Log In now to create your personal set of songs.</p>
+    
+<%# End of Header %>
+
+<div class="login">
+    <h2>Log in now</h2>
+    <br/>
+
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name), data: {turbo: false}) do |f| %>
+      <div class="field">
+        <%= f.label :email %><br />
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "enter email address" %>
+      </div>
+
+      <br/>
+
+      <div class="field">
+        <%= f.label :password %><br />
+        <%= f.password_field :password, autocomplete: "current-password", placeholder: "enter password" %>
+      </div>
+
+      <br/>
+
+      <% if devise_mapping.rememberable? %>
+        <div class="field">
+          <%= f.check_box :remember_me %>
+          <%= f.label :remember_me %>
+        </div>
+      <% end %>
+
+      <p class="alert"><%= alert %></p>
+
+      <br/>
+
+      <div class="actions loginReload">
+        <%= f.submit "Log in", class:"login-btn" %>
+        <br/> <br/>
+        <p>Don't have an account yet? </p>
+        <%= render "devise/shared/links" %>
+      </div>
+    <% end %>
+</div>

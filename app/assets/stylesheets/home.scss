@@ -1,0 +1,298 @@
+// Place all the styles related to the Home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+/* Animations Styling */
+
+.fleft {
+    animation: fromLeft 0.5s linear;
+}
+
+@keyframes fromLeft {
+    0% {
+        transform: translateX(-10rem);
+    }
+
+    100% {
+        transform: translateX(0rem);
+    }
+}
+
+.fade {
+    animation: fade 1s linear;
+}
+
+@keyframes fade {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.fade1 {
+    animation: fade 1.25s linear;
+}
+
+@keyframes fade1 {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.fade2 {
+    animation: fade 1.5s linear;
+}
+
+@keyframes fade2 {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.fright {
+    animation: fromRight 0.5s linear;
+}
+
+@keyframes fromRight {
+    0% {
+        transform: translateX(10rem);
+    }
+
+    100% {
+        transform: translateX(0rem);
+    }
+}
+
+/* Header Styling */
+
+li,
+a {
+    text-decoration: none;
+}
+
+.hr-header {
+    width: 90%;
+    height: 6px;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+    background-color: #fff;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: hrHeader 1s linear;
+
+    @keyframes hrHeader {
+        0% {
+            opacity: 0;
+            width: 50%;
+        }
+
+        100% {
+            opacity: 1;
+            width: 90%;
+        }
+    }
+}
+
+.hr-section {
+    width: 90%;
+    height: 6px;
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+    background-color: #fff;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: hrSection 1s linear;
+
+    @keyframes hrSection {
+        0% {
+            opacity: 0;
+            width: 50%;
+        }
+
+        100% {
+            opacity: 1;
+            width: 90%;
+        }
+    }
+}
+
+header {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    min-height: 10vh;
+    animation: headerAnimation 0.5s linear;
+
+    @keyframes headerAnimation {
+        0% {
+            opacity: 0;
+            transform: translateY(-2rem);
+        }
+
+        100% {
+            opacity: 1;
+            transform: translateY(0rem);
+        }
+    }
+
+    span {
+        cursor: pointer;
+        font-size: 2rem;
+    }
+
+    .nav_links {
+        list-style: none;
+        font-size: 1.25rem;
+
+        li {
+            display: inline-block;
+            padding: 0rem 1rem;
+
+            a {
+                transition: all 0.3s ease 0s;
+            }
+        }
+    }
+
+    .nav_links li a:hover {
+        text-decoration: overline;
+        text-decoration-color: #C0437A;
+    }
+}
+
+/* Section Styling */
+
+section {
+    padding: 0 7%;
+}
+
+.section-home {
+    padding-top: -5rem;
+    min-height: 85vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    .image {
+        padding: 1rem;
+        flex: 1 1 40rem;
+        text-align: center;
+
+        img {
+            height: 80vh;
+        }
+
+    }
+
+    .content {
+        padding: 1rem;
+        flex: 1 1 40rem;
+
+        .h1_main {
+            font-size: 3rem;
+            letter-spacing: 2px;
+            font-weight: 400;
+        }
+
+        .h1_sub {
+            font-size: 2.25rem;
+            letter-spacing: 2px;
+            font-weight: 400;
+            margin-bottom: 2rem;
+        }
+
+        .section-home_buttons a {
+            border: none;
+            outline: none;
+            padding: 1rem 1rem;
+            border-radius: 25px;
+            background-color: #FF4D89;
+            font-size: 1.25rem;
+            font-weight: 400;
+        }
+
+        .section-home_buttons a:hover {
+            background-color: #ff4d88bb;
+        }
+
+        .section-image {
+            padding-top: 5rem;
+            padding-left: 2.5rem;
+
+            img {
+                border-radius: 25px;
+                box-shadow: #15182b9c;
+                padding: 1rem;
+                width: 30%;
+                height: 200px;
+                transition: all 0.3s ease 0s;
+            }
+
+            img:hover {
+                transform: scale(1.05);
+            }
+
+            .img_preview-1 {
+                animation: imageOne 0.5s linear;
+            }
+
+            @keyframes imageOne {
+                0% {
+                    opacity: 0;
+                    transform: translateY(-5rem);
+                }
+
+                100% {
+                    opacity: 1;
+                    transform: translateY(0rem);
+                }
+            }
+
+            .img_preview-2 {
+                animation: imageTwo 0.75s linear;
+            }
+
+            @keyframes imageTwo {
+                0% {
+                    opacity: 0;
+                    transform: translateY(-5rem);
+                }
+
+                100% {
+                    opacity: 1;
+                    transform: translateY(0rem);
+                }
+            }
+
+            .img_preview-3 {
+                animation: imageThree 1s linear;
+            }
+
+            @keyframes imageThree {
+                0% {
+                    opacity: 0;
+                    transform: translateY(-5rem);
+                }
+
+                100% {
+                    opacity: 1;
+                    transform: translateY(0rem);
+                }
+            }
+        }
+    }
+}

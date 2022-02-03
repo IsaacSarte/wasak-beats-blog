@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wasak Beats Blog [Avion]</title>
+
+    <%= favicon_link_tag 'wb.jpg' %>
+
+</head>
+<body>
+    
+<%# Header %>
+
+    <header class="header-home">
+        <span class="header-span">Wasak Beats Blog</span>
+        
+        <nav>
+            <ul class="nav_links">
+                <li><a href="">Home</a></li>
+                <li><%= link_to "Blog" %></li>
+                <li><%= link_to "Create Lyrics", songs_path %></li>
+            </ul>
+        </nav>
+    </header>
+
+
+    <hr class="hr-header" />
+
+    
+<%# End of Header %>
+
+<%# Section %>
+
+    <section class="section-home">
+
+        <div class="content">
+
+            <h1 class="h1_main">Bring your feelings into a song</h1>
+
+            <h1 class="h1_sub">Create, share your lyrics to the world now !</h1>
+            
+            <div class="section-home_buttons">
+                <%= link_to "Look for Inspirations", songs_path %>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <%= link_to "Create Now", songs_path %>
+            </div>
+
+            <div class="section-image">
+                <%= image_tag 'i2.jpg', alt: 'Home image 1', class:"img_preview-1" %>
+                <%= image_tag 'i1.jpg', alt: 'Home image 2', class:"img_preview-2" %>
+                <%= image_tag 'i3.jpg', alt: 'Home image 3', class:"img_preview-3" %>
+            </div>
+
+        </div>
+
+        <div class="image">
+            <%= image_tag 'home_bg.png', alt: 'Home image main background' %>
+        </div>
+        
+    </section>
+
+    <hr class="hr-section" />
+
+<%# End of Main %>
+
+
+</body>
+</html>
