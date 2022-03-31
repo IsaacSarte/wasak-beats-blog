@@ -1,18 +1,12 @@
-<div class="login-svg">
-  <%= image_tag 'blob-scene-haikei.svg', alt: 'Login svg' %>
-</div>
-
 <%# Header %>
 
-<header class="header-home login-header">
-  <span class="header-span"><%= link_to 'Wasak Beats Blog', root_path %> </span>
-</header>
+<%= render 'devise/shared/header' %>
 
-<p class="login-alert">Log In now to create your personal set of songs.</p>
+<p>Log In now to create your personal set of songs.</p>
     
 <%# End of Header %>
 
-<div class="login">
+<div>
     <h2>Log in now</h2>
     <br/>
 
@@ -38,7 +32,7 @@
         </div>
       <% end %>
 
-      <p class="alert"><%= alert %></p>
+      <p><%= alert %></p>
 
       <br/>
 
@@ -48,5 +42,7 @@
         <p>Don't have an account yet? </p>
         <%= render "devise/shared/links" %>
       </div>
+
     <% end %>
+    
 </div>
