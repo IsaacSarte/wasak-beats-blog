@@ -1,70 +1,106 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wasak Beats Blog [Avion]</title>
-
-    <%= favicon_link_tag 'wb.jpg' %>
-
-</head>
-<body>
-    
 <%# Header %>
 
-    <header class="header-home">
-        <span class="header-span">Wasak Beats Blog</span>
+    <header class="header-home sticky top-0 flex justify-center items-center gap-10 py-8 custom:flex-col">
+
+        <span class="header-span text-4xl">Wasak Beats Blog</span>
         
         <nav>
-            <ul class="nav_links">
-                <li><a href="">Home</a></li>
-                <li><%= link_to "Blog", posts_path %></li>
-                <li><%= link_to "Create Lyrics", songs_path %></li>
+            <ul class="nav_links flex gap-5 text-xl custom:text-xl gap-4">
+                <li class="hover:border-b-2 hover:border-b-fuchsia-600"><a href="">Home</a></li>
+                <li class="hover:border-b-2 hover:border-b-fuchsia-600"><%= link_to "Blog", posts_path %></li>
+                <li class="hover:border-b-2 hover:border-b-fuchsia-600"><%= link_to "Create Lyrics", songs_path %></li>
+                <button><%= link_to "Sign In", songs_path, class: 'signin-btn bg-violet-800 font-semibold hover:bg-violet-900' %></button>
             </ul>
         </nav>
+
     </header>
-
-
-    <hr class="hr-header" />
-
     
 <%# End of Header %>
 
 <%# Section %>
 
-    <section class="section-home">
-
-        <div class="content">
-
-            <h1 class="h1_main">Bring your feelings into a song</h1>
-
-            <h1 class="h1_sub">Create, share your lyrics to the world now !</h1>
-            
-            <div class="section-home_buttons">
-                <%= link_to "Look for Inspirations", songs_path %>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <%= link_to "Create Now", songs_path %>
-            </div>
-
-            <div class="section-image">
-                <%= image_tag 'i2.jpg', alt: 'Home image 1', class:"img_preview-1" %>
-                <%= image_tag 'i1.jpg', alt: 'Home image 2', class:"img_preview-2" %>
-                <%= image_tag 'i3.jpg', alt: 'Home image 3', class:"img_preview-3" %>
-            </div>
-
+    <section class="home-section flex justify-center custom:flex-col-reverse fade-in">
+        <div class="home-left font-semibold custom:text-center">
+            <h2 class="text-4xl custom:text-2xl">Bring your feelings into a song</h2>
+            <h2 class="text-4xl mt-2 custom:text-2xl">Create, share your lyrics to<br/> the world now!</h2>
+            <br/>
+            <%= link_to "Look for Inspirations", songs_path, class: 'signin-btn look-btn bg-violet-800 font-semibold hover:bg-violet-900' %>
         </div>
 
-        <div class="image">
+        <div class="home-right">
             <%= image_tag 'home_bg.png', alt: 'Home image main background' %>
         </div>
-        
     </section>
 
-    <hr class="hr-section" />
+<%# End of Section %>
 
-<%# End of Main %>
+    <br/><br/>
 
+    <div class="text-center">
+        <span class="text-stone-400 font-semibold uppercase tracking-wide">Learn More</span>
+        <br/>
+        <span class="text-stone-400 font-semibold">▽</span>
+    </div>
 
-</body>
-</html>
+    <br/><br/>
+
+<%# Section %>
+
+    <section class="home-section flex gap-20 justify-center custom:flex-col-reverse fade-in">
+        <div class="home-left home-left-2 font-semibold custom:text-center">
+            <h2 class="text-2xl custom:text-xl">Create, Share, and Sing on the go!</h2>
+            <h2 class="text-xl text-stone-400 mt-2 custom:text-lg">Available on the Google playstore<br/> and the Apple app store soon!</h2>
+        </div>
+
+        <div class="home-right">
+            <%= image_tag 'phone.png', alt: 'Home image main background' %>
+        </div>
+    </section>
+
+<%# End of Section %>
+
+    <br/><br/>
+
+<%# Section %>
+
+    <section class="home-section flex gap-20 justify-center custom:flex-col gap-0 fade-in">
+        <div class="home-left-image font-semibold custom:text-center">
+            <%= image_tag 'explore.png', alt: 'Home image main background' %>
+        </div>
+
+        <div class="home-right-none-image custom:text-center">
+            <h2 class="text-2xl custom:text-xl font-semibold">Explore, Collab, with everybody!</h2>
+            <h2 class="text-xl text-stone-400 mt-2 custom:text-lg font-semibold">Explore song lyrics made by others<br/> and try collaborating with them!</h2> 
+        </div>
+    </section>
+
+<%# End of Section %>
+
+    <br/><br/>
+
+<%# Section %>
+
+    <section class="home-section flex gap-20 justify-center custom:flex-col-reverse fade-in">
+        <div class="home-left home-left-2 font-semibold custom:text-center">
+            <h2 class="text-2xl custom:text-xl">Create your own Set Privately</h2>
+            <h2 class="text-xl text-stone-400 mt-2 custom:text-lg">Create your own library of song lyrics<br/> and get back to it later on!</h2>
+        </div>
+
+        <div class="home-right">
+            <%= image_tag 'private.png', alt: 'Home image main background' %>
+        </div>
+    </section>
+
+<%# End of Section %>
+
+<%# Footer %>
+
+    <footer class="bg-stone-800 text-center font-semibold text-2xl mt-4">
+        <br/><br/>
+        <span class="bg-stone-800">Wasak Beats 2022</span>
+        <br/>
+        <span class="bg-stone-800 text-xl mt-2">by: Isaac Sarte</span>
+        <br/><br/>
+    </footer>
+
+<%# End of Footer %>

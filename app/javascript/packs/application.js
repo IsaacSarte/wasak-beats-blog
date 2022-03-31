@@ -15,36 +15,32 @@ ActiveStorage.start()
 require("trix")
 require("@rails/actiontext")
 
-// go to songs page
-let loginPage = document.getElementsByClassName("loginReload")
-loginPage.onclick = () => {
-    window.location.href = '/writers/songs'
-};
-
-let reloadPage = document.getElementsByClassName("sign-up")
-reloadPage.onclick = () => {
-    window.location.href = '/writers/posts'
-};
-
 document.addEventListener('turbolinks:load', () => {
-    let hideEditorBtn = document.querySelector('.hide-editor')
-    let addLyricsBtn = document.querySelector('.add-lyrics-btn')
-    let richTextArea = document.querySelector('.rich-form')
 
-    let openEditorBtn = document.querySelector('.open-editor')
-    openEditorBtn.style.display = 'none'
+    const faders = document.querySelectorAll('.fade-in');
 
-    hideEditorBtn.addEventListener('click', () => {
-        console.log('Hide Editor Button Clicked')
-        addLyricsBtn.style.display = 'none'
-        richTextArea.style.display = 'none'
-        openEditorBtn.style.display = 'initial'
-    })
+    const appearOptions = {
+        threshold: 1,
+        rootMargin: "0px 0px -50px 0px"
+    };
 
-    openEditorBtn.addEventListener('click', () => {
-        console.log('Open Editor Button Clicked')
-        openEditorBtn.style.display = 'none'
-        addLyricsBtn.style.display = 'initial'
-        richTextArea.style.display = 'block'
-    })
+    const appearOnScroll = new IntersectionObserver(function(
+        entries,
+        appearOnScroll
+    ) {
+        entries.forEach(entry => {
+            if(!entry.isIntersecting) {
+                return;
+            }
+            else {
+                entry.target.classList.add('appear');
+                appearOnScroll.unobserve(entry.target);
+            }
+        });
+    }, appearOptions);
+
+    faders.forEach(fader => {
+        appearOnScroll.observe(fader);
+    });
+
 })
