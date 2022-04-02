@@ -1,3 +1,18 @@
-<header class="header-home header">
-    <span class="header-span"><%= link_to 'Wasak Beats Blog', root_path %> </span>
-</header>
+<%# Header %>
+
+    <header class="header-home sticky top-0 flex justify-center items-center gap-10 py-8 custom:flex-col">
+
+        <span class="header-span text-4xl">Wasak Beats Blog</span>
+        
+        <nav>
+            <ul class="nav_links flex gap-5 text-xl custom:text-xl gap-4">
+                <li class="hover:border-b-2 hover:border-b-fuchsia-600"><a href="/">Home</a></li>
+                <li class="hover:border-b-2 hover:border-b-fuchsia-600"><%= link_to "Blog", posts_path %></li>
+                <li class="hover:border-b-2 hover:border-b-fuchsia-600"><%= link_to "Sign out", destroy_writer_session_path %></li>
+                <button><%= link_to "New Song", new_song_path, class: 'signin-btn bg-violet-800 font-semibold hover:bg-violet-900' %></button>
+            </ul>
+        </nav>
+
+    </header>
+    
+<%# End of Header %>
