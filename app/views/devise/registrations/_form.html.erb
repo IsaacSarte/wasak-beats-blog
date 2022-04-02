@@ -1,4 +1,4 @@
-<div class="min-h-full flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
+<div class="min-h-full flex items-center justify-center py-12 px-4 mt-16 custom:mt-0 sm:px-6 lg:px-8">
   <div class="max-w-md w-full space-y-8">
     <div>
       <h2 class="mt-6 text-center text-3xl font-extrabold text-white">Sign up to Wasak Beats Blog</h2>
@@ -9,14 +9,14 @@
       <input type="hidden" name="remember" value="true">
       <div class="rounded-md shadow-sm -space-y-px">
         <div>
-          <%= f.email_field :email, class:"input-signin bg-white appearance-none rounded-md relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm custom:w-3/4", autofocus: true, autocomplete: "email" %>
+          <%= f.email_field :email, class:"input-signin bg-white appearance-none rounded-md relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm custom:w-3/4", autofocus: true, autocomplete: "email", placeholder: "Email Address" %>
         </div>
         <br/>
         <div class="text-left custom:text-center">
           <% if @minimum_password_length %>
           <em>(<%= @minimum_password_length %> characters minimum)</em>
           <% end %><br />
-          <%= f.password_field :password, class:"input-signin bg-white appearance-none rounded-md relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm custom:w-3/4", autocomplete: "new-password" %>
+          <%= f.password_field :password, class:"input-signin bg-white appearance-none rounded-md relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm custom:w-3/4", autocomplete: "new-password", placeholder: "Password" %>
         </div>
       </div>
 

@@ -1,64 +1,77 @@
+<%# Header %>
+
 <%= render 'header' %>
 
-<div class="method-btn">
-    <div class="new-back-btn">
-        <%= link_to 'Back to Blog', posts_path %>
-    </div>
-</div>
+<%# End of Header %>
 
-<div class="index-public">
+<br/><br/>
 
-    <div class="public-posts-new">
-        <h2>Create A Song to Collab With</h2>
-        <br/><br/>
+<section class="post-new max-w-6xl mt-16 custom:-mt-4">
 
-        <div class="public-posts-new-main">
-            <%= form_with scope: :post, url: post_create_path, local: true, data: {turbo: false}, class: 'form' do |form| %>
-
-                <div class="form-group-left-side">
-                    <div class="form-group">
-                        <%= form.label :title %><br/>
-                        <%= form.text_field :title, class: 'title-input fade', placeholder: 'Song Title by You' %>
-                    </div>
-
-                    <br/>
-
-                    <div class="form-group">
-                        <%= form.label :description %><br/>
-                        <%= form.text_area :description, class: 'desc-input fade1' %>
-                    </div>
-
-                    <br/>
+    <div>
+        <div class="md:grid md:grid-cols-3 md:gap-6">
+            <div class="md:col-span-1">
+                <div class="px-4 sm:px-0">
+                    <i class='bx bx-arrow-back'></i> <%= link_to 'Back to Blog', posts_path %>
+                    <h3 class="text-2xl mt-2 font-semibold leading-6 text-white">Song Information</h3>
+                    <p class="mt-4 text-sm text-slate-300">This information will be displayed publicly so be careful what you share.</p>
                 </div>
+            </div>
 
-                <div class="form-group-right-side">
-                    <div class="form-group-2">
-                        <%= form.label "Song Lyrics" %><br/>
-                        <%= form.text_area :lyric, class: 'lyric-input fade2' %>
-                    </div>
-                </div>
+            <div class="mt-6 md:mt-1 md:col-span-2 custom:mt-1">
 
-                <% if @post.errors.any? %>
-                    <div class="error-new-public">
+                <%= form_with scope: :post, url: post_create_path, local: true, data: {turbo: false}, class: 'song-form-new custom:w-3/4' do |form| %>
+                    <div class="shadow sm:rounded-md sm:overflow-hidden">
+                        <div class="px-4 py-5 bg-gray-50 rounded-md space-y-6 sm:p-6">
+                            <div class="grid grid-cols-3 gap-6">
+                                <div class="col-span-3 sm:col-span-2 bg-gray-50">
+                                    <label for="song-title" class="block text-lg font-semibold bg-gray-50 text-black"> Song Title: </label>
+                                    <div class="mt-1 flex rounded-md shadow-sm bg-gray-50">
+                                        <%= form.text_field :title, class: "song-input-new text-black focus:border-indigo-600 flex-1 block w-full sm:text-sm", placeholder: "Enter song title" %>
+                                    </div>
+                                </div>
+                            </div>
 
-                        <ul>
-                        <% @post.errors.each do |error| %>
-                            <li><%= error.full_message %></li>
-                        <% end %>
-                        </ul>
-                        
+                            <div class="bg-gray-50">
+                                <label for="about" class="block text-lg font-semibold bg-gray-50 text-black"> Description: </label>
+                                    <div class="mt-1 bg-gray-50">
+                                        <%= form.text_area :description, rows: "3", class: "song-desc-input-new text-black shadow-sm mt-1 block w-full sm:text-sm", placeholder: "Enter song description" %>
+                                    </div>
+                                <p class="mt-2 text-sm bg-gray-50 text-gray-800 font-semibold">Brief description for your song.</p>
+                            </div>
+
+                            <div class="bg-gray-50">
+                                <label for="about" class="block text-lg font-semibold bg-gray-50 text-black"> Lyrics: </label>
+                                    <div class="mt-1 bg-gray-50">
+                                        <%= form.text_area :lyric, rows: "3", class: "song-desc-input-new text-black shadow-sm mt-1 block w-full sm:text-sm", placeholder: "Type song lyrics here" %>
+                                    </div>
+                            </div>
+
+                            <% if @post.errors.any? %>
+                                <div class="error-new-public">
+                                    <ul>
+                                        <% @post.errors.each do |error| %>
+                                            <li><%= error.full_message %></li>
+                                        <% end %>
+                                    </ul>
+                                </div>
+                            <% end %>
+
+                            <div class="px-4 py-3 bg-gray-50 text-right sm:px-6">
+                                <%= form.submit "Create Song", class: "inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" %>
+                            </div>
+                        </div>
                     </div>
                 <% end %>
 
-                <div class="actions act-form">
-                    <%= form.submit "Save Song" %>
-                </div>
-
-                <br/>
-
-            <% end %>
+            </div>
         </div>
-        
     </div>
 
-</div>
+</section>
+
+<%# Footer %>
+
+    <%= render 'footer' %>
+
+<%# End of Footer %>

@@ -1,41 +1,58 @@
+<%# Header %>
+
 <%= render 'header' %>
 
-<div class="method-btn">
-    <div class="new-public-song-btn">
-        <%= link_to 'Share and Collab another New Song', posts_new_path %>
+<%# End of Header %>
+
+<div class="post-index mt-16 sticky top-0 text-center text-3xl font-extrabold text-white custom:mt-0">
+    <i class='bx bx-plus mt-2' ></i><%= link_to 'Share and Collab another New Song', posts_new_path, class:'hover:text-slate-300' %>
+</div>
+
+<div class="flex justify-evenly post-index-image-top">
+    <div class="">
+        <%= image_tag 'circle.png' %>
+    </div>
+
+    <div class="">
+        <%= image_tag 'curvy.png' %>
     </div>
 </div>
-    
-<div class="index-public">
 
-    <div class="public-posts">
-        <div class="public-posts-card">
-            <% @posts.each do |post| %>
+<section class="post-index-section mt-8">
 
-                <div class="index-public-title">
-                    <p><%= post.title %></p>
-                </div>
+    <div class="post-index-section-div max-w-7xl grid grid-cols-4 gap-8 custom:z-10 md:grid-cols-2 lg:grid-cols-3 xl:max-w-5xl 2xl:grid-cols-4">
+        <% @posts.each do |post| %>
 
-                <div class="index-public-description">
-                    <p class="p-desc">Description: </p><br/>
-                    <%= post.description %>
-                </div>
+            <div class="bg-violet-900 rounded-lg p-4 flex-col">
+                <p class="bg-violet-900 font-semibold text-xl text-center"><i class='bx bxs-music bg-violet-900 text-gray-300'></i> Song Title: </p>
+                <h3 class="bg-violet-900 font-semibold text-center mt-2"><%= post.title %></h3>
+                <hr />
 
-                <div class="index-public-lyrics">
-                    <p class="p-lyric">Lyrics: </p><br/>
-                    <%= post.lyric %>
-                </div>
+                <br/>
 
-                <br/> <br/>
+                <p class="bg-violet-900 font-semibold text-xl">Description: </p>
+                <h3 class="bg-violet-900"><%= post.description %></h3>
 
-                <div class="edit-btn">
-                    <%= link_to '✒️Edit and Collab with this Song', post_edit_path(post.id) %>
-                </div>
-                
-                <br/><br/>
+                <br/>
 
-            <% end %>
-        </div>
+                <p class="bg-violet-900 font-semibold text-xl">Lyrics: </p>
+                <h3 class="bg-violet-900"><%= post.lyric %></h3>
+
+                <br/>
+
+                <%= link_to '✒️Edit and Collab with this Song', post_edit_path(post.id), class: 'bg-violet-900 text-emerald-300 font-semibold' %>
+            </div>
+
+        <% end %>
     </div>
-  
+
+</section>
+
+<div class="mt-32 bottom-0 flex justify-evenly post-index-image-bot">
+    <div class="">
+        <%= image_tag 'triangle.png' %>
+    </div>
+    <div class="">
+        <%= image_tag 'curved.png' %>
+    </div>
 </div>

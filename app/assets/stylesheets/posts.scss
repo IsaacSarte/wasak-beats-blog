@@ -3,3 +3,61 @@
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
 /* index */
+
+.post-index-section-div {
+    margin: 0 auto;
+}
+
+.post-index-image-top,
+.post-index-image-bot {
+    gap: 50%;
+}
+
+/* new */
+
+.post-new {
+    margin: 0 auto;
+}
+
+.song-form-new {
+    width: 90%;
+}
+
+.song-input-new {
+   background-color: #fff;
+   border-radius: 15px;
+   border: 1px solid rgb(74, 39, 74);
+   padding: 0.25rem;
+}
+
+.song-input-new::placeholder,
+.song-desc-input-new::placeholder {
+    color: rgb(98, 98, 98);
+}
+
+.song-desc-input-new {
+    background-color: #fff;
+    border-radius: 15px;
+    border: 1px solid rgb(74, 39, 74);
+    resize: none;
+    line-break: normal;
+    white-space: normal;
+    padding: 0.25rem;
+}
+
+@media screen and (max-width: 639px) {
+    .post-index a {
+        font-size: 1.125rem;
+    }
+
+    .post-index-section-div {
+        margin: 0 auto;
+        width: 75%;
+        grid-template-columns: repeat(1, minmax(0, 1fr)) !important;
+    }
+
+    .song-form-new {
+        padding-top: 1rem;
+        margin: 0 auto;
+    }
+}
