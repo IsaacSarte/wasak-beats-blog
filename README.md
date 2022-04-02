@@ -16,4 +16,5 @@
 2. Can add media files
 
 ### Sample Website Screenshot:
+![image](https://user-images.githubusercontent.com/82153590/161380422-3f3f0c4f-3ab5-4752-a8f6-f3e78e999ca4.png)
 
