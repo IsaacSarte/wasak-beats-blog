@@ -1,3 +1,5 @@
+<%= javascript_pack_tag 'richtext' %>
+
 <%# Header %>
 
 <%= render 'header' %>
@@ -8,27 +10,41 @@
 
     <%= render 'form', song: @song %>
 
-        <%= form_with(model: [@song, @paragraph], class: 'hidden-form') do |form| %>
-          <%= form.hidden_field :element_type, value: 'paragraph' %>
-          <%= form.submit "➕ Add Lyrics", class: 'add-lyrics-btn' %>
-        <% end %>
+    <br/><br/>
 
-         <% @song.elements.each do |element| %>
-          <% if element.persisted? %>
-            <%= element.content %>
-            <%= form_with(model: [@song, element], class: 'rich-form') do |form| %>
-              <%= form.rich_text_area :content %>
-              <div class="rich-form-btns">
-                <%= form.submit "🎙️ Save" %>
-                <p class="hide-editor">➖ Hide Editor</p>
-              </div>
-            <% end %>
-            <p class="open-editor">➕ Show Editor</p>
-          <% end %>
+    <%= form_with(model: [@song, @paragraph], class: 'hidden-form') do |form| %>
+      <%= form.hidden_field :element_type, value: 'paragraph' %>
+      <p class="open-editor text-white font-semibold hover:text-violet-600">Show Editor</p>
+      <br/>
+      <%= form.submit "➕ Add Lyrics", class: 'add-lyrics-btn' %>
+    <% end %>
+
+    <% @song.elements.each do |element| %>
+
+      <% if element.persisted? %>
+        <p class="lyrics-show text-md font-semibold">Lyrics:</p>
+        <%= element.content %>
+        <%= form_with(model: [@song, element], class: 'rich-form') do |form| %>
+          <%= form.rich_text_area :content %>
+          <div class="rich-form-btns">
+            <%= form.submit "🎙️ Save", class: 'font-semibold tracking-wider text-green-400 cursor-pointer hover:text-green-600' %>
+            <p class="hide-editor text-red-400 font-semibold cursor-pointer hover:text-red-600">Hide Editor</p>
+          </div>
         <% end %>
+      <% end %>
+
+    <% end %>
+
+    <br/><br/>
 
 <%# Footer %>
 
-<%= render 'footer' %>
+    <footer class="edit-footer bg-stone-800 text-center font-semibold text-2xl mt-8 custom:relative">
+        <br/><br/>
+        <span class="bg-stone-800">Wasak Beats 2022</span>
+        <br/>
+        <span class="bg-stone-800 text-xl mt-2">by: Isaac Sarte</span>
+        <br/><br/>
+    </footer>
 
 <%# End of Footer %>
