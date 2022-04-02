@@ -1,26 +1,21 @@
-<%# Header %>
-
-<%= render 'header' %>
-
-<%# End of Header %>
-
-<div id="<%= dom_id song %>" class="song-card">
-
-  <div class="song-title">
-    <p class="song-p-title">🎶 Title: <%= song.title %></p>
+<div class="show-song bg-gray-50 shadow overflow-hidden rounded-md sm:rounded-lg max-w-5xl mt-8 custom:w-3/4">
+  <div class="px-4 py-5 sm:px-6 bg-gray-50">
+    <h3 class="text-xl leading-6 font-semibold bg-gray-50 text-black uppercase">Song Details:</h3>
   </div>
-          
-  <br/>
-
-  <p class="song-p-desc">📝 Description: </p><br/>
-    <div class="song-description">
-      <%= song.description %>
-    </div>
-
+  <div class="border-t border-gray-200">
+    <dl class="bg-gray-50">
+      <div class="px-4 py-5 bg-gray-50 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+        <dt class="text-xl font-semibold bg-gray-50 text-black">Song Title: </dt>
+        <dd class="mt-1 text-lg bg-gray-50 text-gray-900 sm:mt-0 sm:col-span-2"><%= song.title %></dd>
+      </div>
+      <div class="px-4 py-5 bg-gray-50 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+        <dt class="text-xl font-semibold bg-gray-50 text-black">Description: </dt>
+        <dd class="mt-1 text-lg bg-gray-50 text-gray-900 sm:mt-0 sm:col-span-2"><%= song.description %></dd>
+      </div>
+      <div class="bg-gray-50 gap-4 mt-4 mb-4">
+        <%= link_to "✒️Edit this song", edit_song_path(@song), class: 'bg-gray-50 text-emerald-700 font-semibold' %>
+        <%= link_to " ↩ Back to songs", songs_path, class: 'bg-gray-50 text-violet-800 font-semibold ml-2' %>
+      </div>
+    </dl>
+  </div>
 </div>
-
-<%# Footer %>
-
-<%= render 'footer' %>
-
-<%# End of Footer %>

@@ -4,25 +4,9 @@
 
 <%# End of Header %>
 
-<div class="method-btn">
-  <div class="delete-song-btn">
-    <%= link_to "Delete this Song", @song, method: :delete, data: {turbo_confirm: 'Are you sure want to delete this song?'} %>
-  </div>
-  <div class="edit-show-song-btn">
-        <%= link_to '↩ Back to Songs', songs_path %>
-    </div>
-</div>
+<br/><br/>
 
-<div class="index-private">
-
-    <div class="edit-private-songs">
-
-        <h1 class="edit-main-text">Editing Song</h1>
-        <br/>
-
-        <div class="edit-song">
-            <%= render 'form', song: @song %>
-        </div>
+    <%= render 'form', song: @song %>
 
         <%= form_with(model: [@song, @paragraph], class: 'hidden-form') do |form| %>
           <%= form.hidden_field :element_type, value: 'paragraph' %>
@@ -42,10 +26,6 @@
             <p class="open-editor">➕ Show Editor</p>
           <% end %>
         <% end %>
-
-    </div>
-
-</div>
 
 <%# Footer %>
 
